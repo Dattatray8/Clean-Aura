@@ -1,19 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Agu+Display:MORF@0..60&family=Cormorant:wght@300..700&family=Domine:wght@400..700&family=Lobster&family=Markazi+Text:wght@400..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+CU:wght@100..400&display=swap');
 
 * {
     box-sizing: border-box;
- 
+
     /* margin: 0;
   padding: 0; */
 
@@ -72,7 +61,7 @@ body {
     width: 250px;
     background-color: #0f8cbd;
     color: white;
-    
+
     position: fixed;
     height: 100%;
     right: -250px;
@@ -195,21 +184,21 @@ body {
     font-style: normal;
 }
 
-.navbar{
+.navbar {
     width: 100%;
     height: 20vh;
     display: flex;
     align-items: center;
 }
 
-.left{
+.left {
     display: flex;
     width: 50%;
     align-items: center;
     height: 100%;
 }
 
-#logo{
+#logo {
     height: 100px;
     width: 100px;
     border: 1px solid black;
@@ -218,24 +207,24 @@ body {
     margin: 0 10px;
 }
 
-#title{
+#title {
     font-size: 2.5rem;
     margin: 0 10px;
-    font-family:Bahnschrift SemiCondensed;
+    font-family: Bahnschrift SemiCondensed;
     font-weight: bold;
-    background: linear-gradient(to bottom, rgba(5,165,229,255),rgba(52,50,112,255));
+    background: linear-gradient(to bottom, rgba(5, 165, 229, 255), rgba(52, 50, 112, 255));
     background-clip: text;
     color: transparent;
 }
 
-.head{
+.head {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 10px;
 }
 
-.right{
+.right {
     width: 50%;
     height: 100%;
     display: flex;
@@ -243,19 +232,38 @@ body {
     align-items: center;
 }
 
-ul{
+#nav-tab {
     list-style: none;
     display: flex;
-    gap:50px;
+    gap: 50px;
     font-weight: 600;
     font-size: 20px;
     cursor: pointer;
     transition: 0.7s all;
 }
 
-li:hover{
+li:hover {
     border-bottom: 2px solid black;
 }
+
+.product-section {
+    display: none;
+    flex-direction: row;
+    text-align: center;
+    position: fixed;
+    margin-left: 77%;
+    margin-top: 70vh;
+}
+
+#product-tab {
+    list-style: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.7s all;
+    cursor: pointer;
+}
+
+
 /* Animation for main heading */
 @keyframes fadeInUp {
     0% {
@@ -304,24 +312,25 @@ li:hover{
 }
 
 
-@media (max-width:480px){
-    .sidebar  {
-            list-style-type: none;
-            padding: 0;
-            margin-top: -60vh;
-            /* z-index: -1; */
-        
-        }
+@media (max-width:480px) {
+    .sidebar {
+        list-style-type: none;
+        padding: 0;
+        margin-top: -60vh;
+        /* z-index: -1; */
+
+    }
 }
-@media (max-width:376px){
-  .sidebar  {
-          list-style-type: none;
-          padding: 0;
-          margin-top: -62vh;
-          /* overflow-x: scroll; */
-          /* z-index: -1; */
-      
-      }
+
+@media (max-width:376px) {
+    .sidebar {
+        list-style-type: none;
+        padding: 0;
+        margin-top: -62vh;
+        /* overflow-x: scroll; */
+        /* z-index: -1; */
+
+    }
 }
 
 
@@ -357,7 +366,7 @@ li:hover{
         /* border: 2px solid black; */
         transition: margin-right 0.3s;
         text-align: center;
-       
+
         /* font-weight: 2700px; */
         justify-content: center;
         position: absolute;
@@ -792,7 +801,7 @@ li:hover{
        
   } */
 
-  
+
 @media(max-width: 1950px) {
     .cfooter {
         height: auto;
@@ -812,6 +821,7 @@ li:hover{
         margin-top: 50vh;
     }
 }
+
 /* @media(max-width: 1030px) {
     .cfooter {
         height: auto;
@@ -867,21 +877,22 @@ li:hover{
     }
 
 }
+
 @media(max-width: 480px) {
-  .footer_logo {
-      width: 60px;
-      height: 60px;
-  }
+    .footer_logo {
+        width: 60px;
+        height: 60px;
+    }
 
-  .footer_content h5,
-  .footer_content p {
-      font-size: 1rem;
-  }
+    .footer_content h5,
+    .footer_content p {
+        font-size: 1rem;
+    }
 
-  .footer_icons {
-      font-size: 1.5rem;
-      gap: 10px;
-  }
+    .footer_icons {
+        font-size: 1.5rem;
+        gap: 10px;
+    }
 }
 
 @media(max-width: 450px) {
@@ -895,12 +906,12 @@ li:hover{
 }
 
 @media(max-width: 376px) {
-  .cfooter {
-    height: auto;
-    /* Allow for dynamic height based on content */
-    bottom: 0px;
-    margin-top: 180vh;
-}
+    .cfooter {
+        height: auto;
+        /* Allow for dynamic height based on content */
+        bottom: 0px;
+        margin-top: 180vh;
+    }
 }
 
 
@@ -929,7 +940,7 @@ li:hover{
 
 body {
     /* background: linear-gradient(135deg, #4c7aa9 23%, #69d9e3 40%); */
-    
+
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
