@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Aura</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="shortcut icon" href="clean_img.jpg" type="image/x-icon">
+  <!-- Include CDN for CD Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdicons@2.0.0/dist/cdicons.min.css">
+
+
+  <style>
+    /* Main Section Styles */
+    .home-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px 20px;
+      /* background: linear-gradient(to right, #a1ebff, #57595c); 
+  text-align: center; */
+      height: 100vh;
+      z-index: -1;
+      padding-top: 30vh;
+      /* Ensure section starts at 50vh */
+    }
+
+    .home-container {
+      max-width: 1200px;
+      width: 100%;
+      /* border: 2px solid black; */
+      text-align: center;
+      color: white;
+    }
+
+    /* Home Heading and Description */
+    .home-h1 {
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .home-description {
+      font-size: 1.2rem;
+      color: #fff9f5;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    /* Product Header */
+    .product-header {
+      margin-bottom: 40px;
+    }
+
+    .product-header h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #ffeb3b;
+      /* Yellow for emphasis */
+      margin-bottom: 10px;
+      justify-content: center;
+
+    }
+
+    .product-header p {
+      font-size: 1.1rem;
+      color: #f7f7f7;
+    }
+
+    /* Product List Styles */
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 70px;
+      margin: 40px 20px;
+      justify-items: center;
+    }
+
+    /* Individual Product Item */
+    .product-item {
+      background: linear-gradient(135deg, #146263, #194271);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      color: #fff;
+    }
+
+    .product-item:hover {
+      transform: translateY(-12px);
+      /* Lift the card up on hover */
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+      /* Stronger shadow */
+      background: linear-gradient(150deg, #7cdacb 10%, #469ee7 50%);
+      /* Gradient swap */
+    }
+
+    .product-icon {
+      font-size: 3.5rem;
+      color: #fff;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .product-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      /* color: #000000; */
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .product-description {
+      font-size: 1.1rem;
+      color: #56f4d2;
+      line-height: 1.6;
+      text-align: center;
+      flex-grow: 1;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    /* Button Styles */
+    .home-btn {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background-color: #ffeb3b;
+      color: #007bff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-top: 40px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-btn:hover {
+      background-color: #ffd600;
+      color: white;
+    }
+
+
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .home-h1 {
+        font-size: 2.5rem;
+        /* z-index: 1; */
+      }
+
+      .home-description {
+        font-size: 1rem;
+        margin-top: 3vh;
+        /* border: 2px solid black; */
+      }
+
+      .product-item {
+        height: auto;
+        border: 2px solid black;
+
+        width: auto;
+      }
+
+
+      /* grid-template-columns: 1fr 1fr; */
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 70px;
+        margin: 40px 20px;
+        justify-items: center;
+      }
+
+
+
+
+
+    }
+
+
+
+
+
+    @media (max-width: 469px) {
+      .home-h1 {
+        font-size: 2rem;
+      }
+
+      .product-list {
+        grid-template-columns: 1fr;
+      }
+
+      .product-item {
+        height: 290px;
+      }
+
+      .home-section {
+
+        height: 180vh;
+      }
+
+
+    }
+
+    @media (max-width: 415px) {
+
+      .home-section {
+
+        height: 100vh;
+
+      }
+
+
+    }
+
+
+    @media (max-width: 376px) {
+
+      .home-section {
+
+        height: 100vh;
+
+      }
+
+
+      .product-item {
+        height: 300px;
+
+        /* border: 2px solid black; */
+      }
+
+    }
+
+
+
+
+
+
+
+    /* Basic reset */
+
+
+    /* Gaurav Slider */
+    .gaurav-slider {
+      height: 60vh;
+      margin-top: 30vh;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Images inside the slider */
+    .gaurav-slider .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      /* Ensure images maintain aspect ratio */
+      opacity: 0;
+      /* filter: blur(5px); Start with blur */
+      transition: opacity 1s ease, filter 5s ease;
+      /* Transition for opacity and blur */
+    }
+
+    /* Initially, show the first image */
+    .gaurav-slider .slide:nth-child(1) {
+      opacity: 1;
+      filter: blur(0);
+      /* Remove blur for the first image */
+    }
+
+    /* Radio buttons at the bottom */
+    .radio-buttons {
+      position: absolute;
+      /* bottom: 20px; */
+      margin-top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: - 1;
+
+    }
+
+    .radio-buttons input[type="radio"] {
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background-color: rgba(255, 255, 255, 0.5);
+      transition: background-color 0.3s;
+    }
+
+    .radio-buttons input[type="radio"]:checked {
+      background-color: #fff;
+    }
+
+    /* Responsive Design for  a slider  */
+
+    @media (max-width: 950px) {
+      .gaurav-slider {
+        height: 60vh;
+        margin-top: 30rem;
+
+      }
+
+      .radio-buttons input[type="radio"] {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+
+
+    @media (max-width: 768px) {
+      .gaurav-slider {
+        height: 40vh;
+      }
+
+      .radio-buttons input[type="radio"] {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gaurav-slider {
+        height: 30vh;
+      }
+
+      .radio-buttons input[type="radio"] {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- <div class="logo">
+      <img src="clean_img.jpg" alt="Logo"> -->
+
+
+
+
+  <nav class="navbar">
+    <div class="left">
+      <img src="logo.webp" alt="Logo" id="logo">
+      <!-- <br> -->
+      <div class="head">
+        <p id="title">Clean Aura</p>
+        <p style="margin:0 0 0 10px;">Clear Aura: Clean Solutions for Every Surface, Inside and Out</p>
+      </div>
+    </div>
+
+    <div class="right">
+        <ul>
+          <li>Home</li>
+          <li>Contact</li>
+          <li></li>
+          <li>Products</li>
+        </ul>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Content area -->
+
+
+
+
+
+
+
+  <div class="gaurav-slider">
+    <img src="Car-wash.jpeg" alt="Image 1" class="slide" loading="lazy">
+    <img src="Dish-washer.jpeg" alt="Image 2" class="slide" loading="lazy">
+    <img src="Glass_Cleaner.jpeg" alt="Image 3" class="slide" loading="lazy">
+    <img src="Toilate-cleaner.jpeg" alt="Image 4" class="slide" loading="lazy">
+  </div>
+
+  <div class="radio-buttons">
+    <input type="radio" name="slider" id="radio1" checked>
+    <input type="radio" name="slider" id="radio2">
+    <input type="radio" name="slider" id="radio3">
+    <input type="radio" name="slider" id="radio4">
+  </div>
+  <section class="home-section">
+    <div class="home-container">
+      <!-- <h1 class="home-h1">Welcome to CleanAura</h1> -->
+      <p class="home-description">Discover the ultimate cleaning products that bring freshness and hygiene to every part
+        of your home. From toilet cleaners to surface disinfectants, we’ve got you covered.</p>
+
+
+
+
+
+
+
+
+
+
+      <div class="product-header">
+        <h2 style=" color: rgb(248, 251, 255);">Our Featured Products</h2>
+        <p style="color:rgb(14, 84, 88)">Browse through our range of high-quality cleaning solutions designed to make
+          your home shine!</p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="product-list">
+        <!-- Product 1 -->
+        <div class="product-item">
+          <div class="product-icon">
+            <span class="cd-icon cd-icon-toilet"></span> <!-- Toilet icon -->
+          </div>
+          <h2 class="product-title" style="color: white;">Toilet Cleaner</h2>
+          <p class="product-description">CleanAura Toilet Cleaner is a powerful solution designed to keep your toilet
+            spotless and hygienic.</p>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-item">
+          <div class="product-icon">
+            <span class="cd-icon cd-icon-glass"></span> <!-- Glass cleaner icon -->
+          </div>
+          <h2 class="product-title">Glass Cleaner</h2>
+          <p class="product-description">Achieve a streak-free shine and clarity with CleanAura Glass Cleaner for
+            windows, mirrors, and glass surfaces.</p>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-item">
+          <div class="product-icon">
+            <span class="cd-icon cd-icon-car"></span> <!-- Car wash icon -->
+          </div>
+          <h2 class="product-title">Car Wash Shampoo</h2>
+          <p class="product-description">Preserve your car’s showroom shine with CleanAura Car Wash Shampoo, designed to
+            clean without damaging protective finishes.</p>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-item">
+          <div class="product-icon">
+            <span class="cd-icon cd-icon-dishwasher"></span> <!-- Dishwash icon -->
+          </div>
+          <h2 class="product-title">Dishwash Liquid</h2>
+          <p class="product-description">CleanAura Dishwash Liquid removes grease and stains effortlessly, leaving your
+            dishes sparkling clean.</p>
+        </div>
+      </div>
+
+      <!-- <button class="home-btn">Shop Now</button> -->
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <footer class="cfooter">
+    <div class="footer_content">
+
+      <img class="footer_logo" src="clean_img.jpg" alt="Footer Logo">
+
+
+      <div>
+        <h5>Contact:</h5>
+        <p>9260199999, 9850053387</p>
+      </div>
+      <div>
+        <h5>Email:</h5>
+        <!-- <p><a href="mailto:gaurav.nandedkar07@icloud.com" style="color: white;">gaurav.nandedkar07@icloud.com</a></p> -->
+        <p><a href="mailto:info@CleanAura.in" style="color: white;">info@CleanAura.in</a></p>
+      </div>
+      <div>
+        <h5>Address:</h5>
+        <p>Pebbles Urbania, Bavdhan, Pune - 21</p>
+      </div>
+    </div>
+
+    <div class="footer_icons">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+
+    <hr class="footer_line">
+
+    <!-- Designed & Developed By Section -->
+    <div class="footer_design_by">
+      © Designed & Developed by:
+    </div>
+    <div class="footer_infyvaritaas">
+      Infyvaritaas Softtech Pvt Ltd, Pune
+    </div>
+  </footer>
+</body>
+
+<script src="script.js">
+
+</script>
+
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.gaurav-slider .slide');
+  const totalSlides = slides.length;
+  const radios = document.querySelectorAll('.radio-buttons input[type="radio"]');
+
+  function changeSlide() {
+
+    slides[currentIndex].style.opacity = 0;
+    // slides[currentIndex].style.filter = 'blur(5px)';
+
+    // Move to the next image
+    currentIndex = (currentIndex + 1) % totalSlides;
+
+
+    slides[currentIndex].style.opacity = 1;
+    slides[currentIndex].style.filter = 'blur(0)';
+
+    // Update radio button
+    updateRadioButton();
+  }
+
+  function updateRadioButton() {
+
+    radios.forEach(radio => radio.checked = false);
+
+    radios[currentIndex].checked = true;
+  }
+
+
+  radios.forEach((radio, index) => {
+    radio.addEventListener('click', () => {
+      currentIndex = index;
+
+      slides.forEach(slide => {
+        slide.style.opacity = 0;
+
+      });
+
+      slides[currentIndex].style.opacity = 1;
+      slides[currentIndex].style.filter = 'blur(0)';
+      updateRadioButton();
+    });
+  });
+
+
+  setInterval(changeSlide, 3000);
+</script>
