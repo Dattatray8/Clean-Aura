@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Clean Aura</title>
+    <link rel="shortcut icon" href="clean_img.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+
+<style>
+    .form_map_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+
+    .enquiryouter {
+        flex: 1;
+        max-width: 500px;
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .formtitle {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #007BFF;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .enquiryinner label {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 15px;
+        color: #333;
+    }
+
+
+    .enquiryinner input,
+    .enquiryinner select,
+    .enquiryinner textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        background: transparent;
+        outline: none;
+        transition: border-bottom 0.3s ease-in-out;
+    }
+
+    .enquiryinner input:focus,
+    .enquiryinner select:focus,
+    .enquiryinner textarea:focus {
+        border-bottom: 2px solid #007BFF;
+    }
+
+    .enquiryinner select {
+        appearance: none;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="0,0 20,0 10,10" fill="%23007BFF"/></svg>') no-repeat right 10px center;
+        background-size: 15px;
+    }
+
+
+    .message_box {
+        height: 100px;
+        resize: none;
+    }
+
+    /* Submit Button */
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background: #007BFF;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    }
+
+    .btn:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* Google Map Section */
+    .gmap {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .gmap iframe {
+        width: 100%;
+        height: 450px;
+        border-radius: 10px;
+        box-shadow: 10px 25px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 1100px) {
+        .form_map_wrapper {
+            flex-direction: column;
+            width: 90%;
+            margin-left: 5px;
+            align-items: center;
+        }
+
+        .enquiryouter {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .gmap {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .gmap iframe {
+            width: 100%;
+            height: 400px;
+        }
+    }
+
+    @media (max-width: 945px) {
+        .form_map_wrapper {
+            flex-direction: column;
+            width: 90%;
+            /* border: 2px solid black; */
+            /* margin-left: -120px; */
+            margin-top: 26vh;
+            align-items: center;
+        }
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <div class="left">
+            <img src="logo.webp" alt="Logo" id="logo">
+            <!-- <br> -->
+            <div class="head">
+                <p id="title">Clean Aura</p>
+                <p style="margin:0 0 0 10px;">Clear Aura: Clean Solutions for Every Surface, Inside and Out</p>
+            </div>
+        </div>
+
+        <div class="right">
+            <ul id="nav-tab">
+                <li class="left-anime"><a href="/">Home</a></li>
+                <li class="left-anime"><a href="/contact.html">Contact</a></li>
+                <li class="right-anime">About</li>
+                <li id="product" class="right-anime" onclick="visibleProductSection()">Products</li>
+            </ul>
+        </div>
+
+        <div class="product-section">
+            <ul id="product-tab">
+                <li style="margin-bottom: 20px;">Glass Cleaner</li>
+                <li style="margin-bottom: 20px;">Hand Wash</li>
+                <li style="margin-bottom: 20px;">Colour Floor Liquid</li>
+                <li style="margin-bottom: 20px;">Premium Surface Cleaner</li>
+                <li style="margin-bottom: 20px;">MultiPurpose Cleaning Liquid</li>
+                <li style="margin-bottom: 20px;">Toilet Cleaner</li>
+                <li style="margin-bottom: 20px;">DishWash</li>
+                <li style="margin-bottom: 20px;">Fabric Liquid Detergent</li>
+                <li style="margin-bottom: 20px;">Room Fresher</li>
+                <li style="margin-bottom: 20px;">Car Wash Shampoo</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="form_map_wrapper">
+        <!-- ---------------enquiry form------------------- -->
+        <div class="enquiryouter">
+            <p class="formtitle">Inquiry Form</p>
+            <div class="enquiryinner">
+                <form id="myForm" name="submit-to-google-sheet">
+                    <label class="firstname" for="firstname">First Name:<span class="star">*</span></label>
+                    <input class="inputfirstname" type="text" name="firstname" id="firstname" required>
+                    <label class="lastname" for="lastname">Last Name:<span class="star">*</span></label>
+                    <input class="inputlastname" type="text" name="lastname" id="lastname" required>
+                    <label class="states" for="states">Select Your State:<span class="star">*</span></label>
+
+                    <select class="selectstate" name="states" id="states" onchange="updateCities()" required>
+                        <option value="" disabled selected>-- Select a State --</option>
+                        <option value="AP">Andhra Pradesh</option>
+                        <option value="AR">Arunachal Pradesh</option>
+                        <option value="AS">Assam</option>
+                        <option value="BR">Bihar</option>
+                        <option value="CG">Chhattisgarh</option>
+                        <option value="GA">Goa</option>
+                        <option value="GJ">Gujarat</option>
+                        <option value="HR">Haryana</option>
+                        <option value="HP">Himachal Pradesh</option>
+                        <option value="JK">Jammu and Kashmir</option>
+                        <option value="JH">Jharkhand</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="KL">Kerala</option>
+                        <option value="MP">Madhya Pradesh</option>
+                        <option value="MH">Maharashtra</option>
+                        <option value="MN">Manipur</option>
+                        <option value="ML">Meghalaya</option>
+                        <option value="MZ">Mizoram</option>
+                        <option value="NL">Nagaland</option>
+                        <option value="OD">Odisha</option>
+                        <option value="PB">Punjab</option>
+                        <option value="RJ">Rajasthan</option>
+                        <option value="SK">Sikkim</option>
+                        <option value="TN">Tamil Nadu</option>
+                        <option value="TS">Telangana</option>
+                        <option value="TR">Tripura</option>
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="UK">Uttarakhand</option>
+                        <option value="WB">West Bengal</option>
+                        <option value="AN">Andaman and Nicobar Islands</option>
+                        <option value="CH">Chandigarh</option>
+                        <option value="DH">Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option value="DL">Delhi</option>
+                        <option value="LD">Lakshadweep</option>
+                        <option value="PY">Puducherry</option>
+                    </select>
+                    <label class="city" for="city">Select Your City:<span class="star">*</span></label>
+                    <select class="selectcity" id="city" name="city">
+                        <option value="" disabled selected>-- Select a City --</option>
+                    </select>
+                    <label class="pincode" for="pincode">Pincode:<span class="star">*</span></label>
+                    <input class="inputpincode" type="text" maxlength="6" id="pincode" name="pincode" required>
+                    <label class="phone_number" for="phone_number">Phone Number:<span class="star">*</span></label>
+                    <input class="input_phone_number" type="tel" name="phone_number" maxlength="10" required>
+                    <label class="message" for="message">Massage:<span class="star">*</span></label>
+
+                    <textarea class="message_box" name="message" id="message"></textarea>
+
+                    <button class="btn"><span class="enquirytext">Submit</span></button>
+
+                </form>
+            </div>
+        </div>
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzyk8HLEZZ96GOuBCSf0Zc59V8uS2dAQyXiuIV3Nj27MEX7r8E8GKFeVBQ5MS_JU4Mh/exec';
+            const form = document.forms['submit-to-google-sheet'];
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+
+                fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            console.log('Success!', response);
+                            alert('Form submitted successfully!');
+                            form.reset();
+                        } else {
+                            console.error('Failed to submit form!', response);
+                            alert('There was an error submitting the form.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        alert('There was an error submitting the form.');
+                    });
+            });
+        </script>
+
+        <!-- ------------------Gmap---------------------- -->
+        <section class="gmap">
+            <iframe
+                src="//www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3783.3321975015474!2d73.77152227519156!3d18.51388438257835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDMwJzUwLjAiTiA3M8KwNDYnMjYuOCJF!5e0!3m2!1sen!2sin!4v1738596390558!5m2!1sen!2sin"
+                width="600" height="450" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </div>
+
+    <!-- --------------------footer----------------------- -->
+    <footer class="cfooter">
+        <div class="footer_content">
+            <!-- Logo -->
+            <img class="footer_logo" src="clean_img.jpg" alt="Footer Logo">
+
+            <!-- Contact, Email, and Address -->
+            <div>
+                <h5>Contact:</h5>
+                <p>9260199999, 9850053387</p>
+            </div>
+            <div>
+                <h5>Email:</h5>
+                <p><a href="mailto:info@CleanAura.in" style="color: white;">info@CleanAura.in</a></p>
+            </div>
+            <div>
+                <h5>Address:</h5>
+                <p>Pebbles Urbania, Bavdhan, Pune - 21</p>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="footer_icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <hr class="footer_line">
+
+        <!-- Designed & Developed By Section -->
+        <div class="footer_design_by">
+            © Designed & Developed by:
+        </div>
+        <div class="footer_infyvaritaas">
+            Infyvaritaas Softtech Pvt Ltd, Pune
+        </div>
+    </footer>
+
+</body>
+<script>
+
+    const stateCities = {
+        "AP": ["Adoni", "Amalapuram", "Anakapalle", "Anantapur", "Bapatla", "Bhimavaram", "Chilakaluripet",
+            "Chittoor", "Dharmavaram", "Eluru", "Gooty", "Gudur", "Guntakal", "Guntur", "Hindupur",
+            "Kadapa", "Kakinada", "Kavali", "Kovvur", "Kurnool", "Machilipatnam", "Madanapalle",
+            "Nandyal", "Narasaraopet", "Nellore", "Ongole", "Palakollu", "Proddatur", "Rajahmundry",
+            "Rayachoti", "Srikakulam", "Tadepalligudem", "Tirupati", "Tenali", "Vijayawada",
+            "Visakhapatnam", "Vizianagaram", "Yemmiganur"],
+        "AR": ["Aalo", "Anini", "Basar", "Bomdila", "Changlang", "Daporijo", "Deomali", "Hawai",
+            "Itanagar", "Jairampur", "Khonsa", "Koloriang", "Longding", "Namsai", "Pasighat",
+            "Roing", "Seppa", "Tawang", "Tezu", "Yingkiong", "Ziro"],
+        "AS": ["Barpeta", "Bilasipara", "Bongaigaon", "Dhubri", "Dibrugarh", "Diphu", "Goalpara",
+            "Gohpur", "Golaghat", "Guwahati", "Hailakandi", "Jorhat", "Karimganj", "Kokrajhar",
+            "Lakhimpur", "Mangaldoi", "Morigaon", "Nagaon", "Nalbari", "Rangia", "Sibsagar",
+            "Silapathar", "Silchar", "Sonari", "Tezpur", "Tinsukia", "Udalguri"],
+        "BR": ["Araria", "Arrah", "Aurangabad", "Bagaha", "Begusarai", "Bettiah", "Bhagalpur",
+            "Bihar Sharif", "Buxar", "Chapra", "Darbhanga", "Gaya", "Hajipur", "Jamalpur",
+            "Katihar", "Khagaria", "Kishanganj", "Lakhisarai", "Madhepura", "Motihari",
+            "Munger", "Muzaffarpur", "Nawada", "Patna", "Purnia", "Samastipur", "Sasaram",
+            "Sitamarhi", "Siwan", "Supaul"],
+        "CG": ["Ambikapur", "Baikunthpur", "Bemetara", "Bilaspur", "Champa", "Dalli Rajhara",
+            "Dhamtari", "Durg", "Jagdalpur", "Janjgir", "Kabirdham", "Korba", "Mahasamund",
+            "Manendragarh", "Raigarh", "Raipur", "Rajnandgaon", "Sakti", "Surajpur", "Tilda"],
+        "GA": ["Bicholim", "Canacona", "Curchorem", "Mapusa", "Margao", "Panaji", "Pernem",
+            "Ponda", "Quepem", "Sanguem", "Vasco da Gama"],
+        "GJ": ["Ahmedabad", "Amreli", "Anand", "Anjar", "Bharuch", "Bhavnagar", "Bhuj",
+            "Dahod", "Deesa", "Dwarka", "Gandhinagar", "Godhra", "Himatnagar", "Jamnagar",
+            "Junagadh", "Kalol", "Mehsana", "Morbi", "Nadiad", "Navsari", "Palanpur",
+            "Porbandar", "Rajkot", "Surat", "Vadodara", "Valsad", "Vapi", "Veraval",
+            "Wadhwan"],
+        "HR": ["Ambala", "Bahadurgarh", "Bhiwani", "Charkhi Dadri", "Faridabad", "Fatehabad",
+            "Gurgaon", "Hansi", "Hisar", "Jind", "Kaithal", "Karnal", "Kurukshetra",
+            "Mahendragarh", "Narnaul", "Palwal", "Panchkula", "Panipat", "Rewari",
+            "Rohtak", "Sirsa", "Sonipat", "Tohana", "Yamunanagar"],
+        "HP": ["Baddi", "Bilaspur", "Chamba", "Dalhousie", "Dharamshala", "Hamirpur",
+            "Kangra", "Kasauli", "Kullu", "Mandi", "Manali", "Nahan", "Palampur",
+            "Paonta Sahib", "Reckong Peo", "Shimla", "Solan", "Sundarnagar", "Una"],
+        "JK": ["Bokaro", "Chaibasa", "Chakradharpur", "Deoghar", "Dhanbad", "Dumka",
+            "Giridih", "Godda", "Hazaribagh", "Jamshedpur", "Lohardaga", "Pakur",
+            "Ramgarh", "Ranchi", "Sahibganj"],
+        "KA": ["Bagalkot", "Ballari", "Belagavi", "Bengaluru", "Bidar", "Chikkamagaluru",
+            "Davangere", "Dharwad", "Gadag", "Gulbarga", "Hassan", "Hubli", "Karwar",
+            "Mandya", "Mangaluru", "Mysuru", "Raichur", "Shivamogga", "Tumakuru",
+            "Udupi", "Vijayapura"],
+        "KL": ["Alappuzha", "Cherthala", "Ernakulam", "Idukki", "Kannur", "Kasaragod",
+            "Kochi", "Kollam", "Kottayam", "Kozhikode", "Malappuram", "Palakkad",
+            "Pathanamthitta", "Thiruvananthapuram", "Thrissur", "Wayanad"],
+        "MP": ["Ashoknagar", "Balaghat", "Barwani", "Betul", "Bhopal", "Burhanpur", "Chhatarpur",
+            "Chhindwara", "Damoh", "Datia", "Dewas", "Dhar", "Guna", "Gwalior", "Harda",
+            "Hoshangabad", "Indore", "Itarsi", "Jabalpur", "Katni", "Khandwa", "Khargone",
+            "Mandsaur", "Morena", "Neemuch", "Panna", "Raisen", "Ratlam", "Rewa", "Sagar",
+            "Satna", "Sehore", "Shahdol", "Shajapur", "Shivpuri", "Sidhi", "Tikamgarh",
+            "Ujjain", "Vidisha"],
+        "MH": ["Ahmednagar", "Akola", "Amravati", "Aurangabad", "Beed", "Bhandara", "Buldhana",
+            "Chandrapur", "Dhule", "Gadchiroli", "Gondia", "Hingoli", "Jalgaon", "Jalna",
+            "Kolhapur", "Latur", "Mumbai", "Nagpur", "Nanded", "Nandurbar", "Nashik",
+            "Osmanabad", "Palghar", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli",
+            "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"],
+        "MN": ["Bishnupur", "Chandel", "Churachandpur", "Imphal", "Jiribam", "Kakching",
+            "Kangpokpi", "Noney", "Senapati", "Tamenglong", "Thoubal", "Ukhrul"],
+        "ML": ["Baghmara", "Cherrapunji", "Jowai", "Mairang", "Nongpoh", "Nongstoin",
+            "Shillong", "Tura", "Williamnagar"],
+        "MZ": ["Aizawl", "Champhai", "Kolasib", "Lawngtlai", "Lunglei", "Saiha",
+            "Serchhip", "Tlabung"],
+        "NL": ["Chumukedima", "Dimapur", "Kiphire", "Kohima", "Longleng", "Mokokchung",
+            "Mon", "Peren", "Phek", "Tuensang", "Wokha", "Zunheboto"],
+        "OD": [
+            "Angul", "Balangir", "Balasore", "Baripada", "Berhampur", "Bhadrak",
+            "Bhubaneswar", "Cuttack", "Dhenkanal", "Jagatsinghpur", "Jajpur",
+            "Jharsuguda", "Kendrapara", "Kendujhar", "Koraput", "Malkangiri",
+            "Nabarangpur", "Nuapada", "Parlakhemundi", "Puri", "Rayagada",
+            "Rourkela", "Sambalpur", "Sundargarh"
+        ],
+        "PB": [
+            "Amritsar", "Barnala", "Bathinda", "Faridkot", "Fatehgarh Sahib",
+            "Fazilka", "Ferozepur", "Gurdaspur", "Hoshiarpur", "Jalandhar",
+            "Kapurthala", "Ludhiana", "Mansa", "Moga", "Mohali", "Muktsar",
+            "Nawanshahr", "Pathankot", "Patiala", "Rupnagar", "Sangrur",
+            "Tarn Taran"
+        ],
+        "RJ": [
+            "Ajmer", "Alwar", "Baran", "Barmer", "Bharatpur", "Bhilwara",
+            "Bikaner", "Bundi", "Chittorgarh", "Dausa", "Dholpur", "Dungarpur",
+            "Hanumangarh", "Jaipur", "Jaisalmer", "Jalore", "Jhalawar", "Jhunjhunu",
+            "Jodhpur", "Karauli", "Kota", "Nagaur", "Pali", "Pratapgarh",
+            "Rajsamand", "Sawai Madhopur", "Sikar", "Sirohi", "Sri Ganganagar",
+            "Tonk", "Udaipur"
+        ],
+        "SK": [
+            "Aritar", "Barfung", "Chakung", "Chongri", "Chungthang", "Daramdin", "Gangtok", "Gyalshing",
+            "Lachen", "Lachung", "Mangan", "Namchi", "Nayabazar", "Pakyong", "Pelling",
+            "Rangpo", "Ravangla", "Singtam", "Soreng", "Tadong", "Tathangchen", "Tingvong",
+            "Titey", "Yuksom", "Melli", "Jorethang", "Namthang", "Samsing", "Rongli", "Salu", "Khamdong"],
+        "TN": [
+            "Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul", "Erode",
+            "Hosur", "Karur", "Kanchipuram", "Kanyakumari", "Madurai", "Nagapattinam",
+            "Namakkal", "Ooty", "Perambalur", "Pudukkottai", "Ramanathapuram",
+            "Salem", "Sivakasi", "Thanjavur", "Theni", "Thoothukudi", "Tiruchirappalli",
+            "Tirunelveli", "Tiruppur", "Tiruvannamalai", "Vellore", "Villupuram",
+            "Virudhunagar"
+        ],
+        "TR": [
+            "Adilabad", "Bhadrachalam", "Hyderabad", "Jagtial", "Karimnagar",
+            "Khammam", "Mahabubnagar", "Mancherial", "Medak", "Nalgonda",
+            "Nizamabad", "Ramagundam", "Sangareddy", "Siddipet", "Suryapet",
+            "Warangal"
+        ],
+        "UP": [
+            "Agra", "Aligarh", "Allahabad", "Amroha", "Ayodhya", "Azamgarh",
+            "Bareilly", "Basti", "Bijnor", "Bulandshahr", "Etawah", "Fatehpur",
+            "Ghaziabad", "Gonda", "Gorakhpur", "Jhansi", "Kanpur", "Lucknow",
+            "Mathura", "Meerut", "Moradabad", "Muzaffarnagar", "Noida",
+            "Prayagraj", "Rampur", "Saharanpur", "Shahjahanpur", "Sitapur",
+            "Varanasi"
+        ],
+        "UK": [
+            "Dehradun", "Haridwar", "Rishikesh", "Nainital", "Almora",
+            "Badrinath", "Kedarnath", "Mussoorie", "Pithoragarh", "Chamoli",
+            "Uttarkashi", "Haldwani", "Tehri", "Bageshwar", "Rudraprayag",
+            "Joshimath", "Lansdowne", "Dhanaulti", "Chamba", "Kotdwar",
+            "Roorkee", "Kashipur", "Pantnagar", "Ranikhet", "Mukteshwar",
+            "Yamunotri", "Gangotri", "Sitarganj", "Champawat", "Khatima"
+        ],
+        "AN": [
+            "Port Blair", "Car Nicobar", "Mayabunder", "Diglipur", "Havelock Island",
+            "Neil Island", "Ross Island", "Little Andaman", "North Sentinel Island", "Middle Andaman",
+            "Baratang Island", "Rangat", "Long Island", "Bambooflat", "Wandoor",
+            "Kadamtala", "Kalighat", "Shoal Bay", "Swaraj Dweep", "Shaheed Dweep",
+            "Campbell Bay", "Chouldari", "Bakultala", "Govind Nagar", "Narcondam Island",
+            "Rutland Island", "Great Nicobar", "Katchal Island", "Karmatang", "Ferrargunj", "Hut Bay"
+        ],
+        "DH": [
+            "Silvassa", "Daman", "Diu", "Khanvel", "Vapi",
+            "Dadra", "Varkund", "Marwad", "Nagwa", "Kachigam",
+            "Bhimpore", "Amboli", "Parzai", "Rakholi", "Sayli",
+            "Kilvani", "Zari", "Tighra", "Khadoli", "Galonda",
+            "Moti Daman", "Nani Daman", "Ghoghla", "Vanakbara", "Jampore",
+            "Kadaiya", "Kunta", "Umergam", "Khariwad", "Patalia", "Naroli"
+        ],
+        "DL": [
+            "Delhi", "New Delhi", "Dwarka", "Rohini", "Saket",
+            "Karol Bagh", "Lajpat Nagar", "Vasant Kunj", "Chandni Chowk", "Mayur Vihar",
+            "Pitampura", "Rajouri Garden", "Greater Kailash", "Nehru Place", "Okhla",
+            "Connaught Place", "Shahdara", "Tilak Nagar", "Preet Vihar", "Ashok Vihar",
+            "Paschim Vihar", "Kirti Nagar", "Janakpuri", "Vivek Vihar", "Inderpuri",
+            "Sarojini Nagar", "Mahipalpur", "Mehrauli", "Chhatarpur", "Ghazipur"
+        ],
+        "LD": [
+            "Kavaratti", "Agatti", "Amini", "Androth", "Kadmat",
+            "Kalpeni", "Minicoy", "Chetlat", "Bitra", "Bangaram",
+            "Kiltan", "Perumal Par", "Suheli Par", "Cheriyapani", "Viringili",
+            "Kalpitti", "Thinnakara", "Parali 1", "Parali 2", "Parali 3",
+            "Chereapani Par", "Pitti", "Athirappilly", "Bangaram Island", "Lakshadweep Sea",
+            "Jumana Islands", "Kottoli", "Manki", "Bhalia", "Kodi"
+        ],
+        "PY": [
+            "Puducherry", "Mahe", "Karaikal", "Yanam", "Thirubhuvanai",
+            "Bahour", "Ariyankuppam", "Ozhukarai", "Lawspet", "Kottakuppam",
+            "Villiyanur", "Thavalakuppam", "Kurumbapet", "Nettapakkam", "Saram",
+            "Manavely", "Reddiarpalayam", "Thirukkanur", "Arumparthapuram", "Mangalam",
+            "Sithananda Nagar", "Kadirkamam", "Villianur", "Kalapet", "Murungapakkam",
+            "Koodapakkam", "Tindivanam", "Muthialpet", "Nainarpalayam", "Karuvadikuppam"
+        ],
+        "WB": [
+            "Asansol", "Bardhaman", "Berhampore", "Chinsurah", "Darjeeling",
+            "Durgapur", "Haldia", "Howrah", "Jalpaiguri", "Kalimpong", "Kolkata",
+            "Kharagpur", "Malda", "Murshidabad", "Siliguri"
+        ]
+    };
+
+    function updateCities() {
+        const state = document.getElementById("states").value;
+        const citySelect = document.getElementById("city");
+        // Clear existing options
+        citySelect.innerHTML = '<option value="" disabled selected>-- Select a City --</option>';
+
+        if (stateCities[state]) {
+            stateCities[state].forEach(function (city) {
+                const option = document.createElement("option");
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+        }
+    }
+
+    // document.getElementById("myForm").addEventListener("submit", function(event) {
+    //     event.preventDefault();
+
+    //     const formData = new FormData(this);
+    //     const data = {};
+    //     formData.forEach(function(value, key) {
+    //       data[key] = value;
+    //     });
+
+    //     fetch('https://script.google.com/macros/s/AKfycby28mEBkl7m7yAS-dmMzrpPRT7XdX3aU5PASpmNLwoa-hMPvUHLM0UG3J0c3RwKG4Z2/exec', {
+    //       method: 'POST',
+    //       body: new URLSearchParams(data)
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       console.log('Success:', data);
+    //       alert("Form submitted successfully!");
+    //     })
+    //     .catch((error) => {
+    //       console.error('Error:', error);
+    //       alert("There was an error submitting the form.");
+    //     });
+    //   });
+</script>
+
+<script src="script.js">
+
+</script>
+
+</html>

@@ -25,31 +25,62 @@ function visibleProductSection() {
   product_sec.style.display = "block";
 }
 
-function hideProductSection(){
+function hideProductSection() {
   const product_sec = document.querySelector(".product-section");
   product_sec.style.display = "none";
 }
 
 const product = document.getElementById('product');
 
-product.addEventListener("mouseenter",visibleProductSection)
+product.addEventListener("mouseenter", visibleProductSection)
 
 const contentVisible = false;
 
-function visibilitymode(){
+function visibilitymode() {
   !contentVisible
-  if(contentVisible){
+  if (contentVisible) {
     visibleProductSection();
   }
-  else{
+  else {
     hideProductSection();
   }
 }
 
-product.addEventListener("click",visibilitymode);
+product.addEventListener("click", visibilitymode);
 
+//in card section img slider
 
+const p_images = ['./images/GreenApple5ltr.webp', './images/Lavender5ltr.webp', './images/Lemon5ltr.webp', './images/Peach5ltr.webp', './images/Rose5ltr.webp']
+const p_name = ['Green Apple', 'Lavender', 'Lemon', 'Peach', 'Rose']
+let img_index = 0;
+let name_index = 0;
 
+function next() {
+  img_index = (img_index + 1) % p_images.length;
+  name_index = (name_index + 1) % p_name.length;
+  updateImage();
+}
+
+function updateImage() {
+  document.getElementById("pimg").src = p_images[img_index];
+  document.getElementById("pname").innerHTML = p_name[name_index];
+}
+
+setInterval(next, 3000);
+
+//know more feature
+
+function knowMore(){
+  const pCard = document.querySelector('.know-more');
+  pCard.style.display = 'block';
+}
+
+function hideKnowMore(){
+  const pCard = document.querySelector('.know-more');
+  pCard.style.display = 'none';
+}
+
+document.querySelector('.know-more').addEventListener('mouseleave',hideKnowMore);
 
 
 // -------------glass claener?
