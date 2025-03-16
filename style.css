@@ -23,111 +23,20 @@ body {
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-    /* border: 2px solid black; */
-    /* background-color: #00f2fe; */
-    /* background-image: url('image1.png');
-  z-index: -1; */
-    /* ascasc */
-    /* background-color: red; */
-    /* z-index: -1; */
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background:#ffffff ;
+   
 }
 
-/* .wrapper {
-    display: flex;
-    position: relative;
-  
-} */
-
-/* Logo positioning */
-.logo img {
-    position: absolute;
-    top: 20px;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    left: 40px;
-    z-index: 1000;
-}
-
-/* Sidebar styling */
-.sidebar {
-    width: 250px;
-    background-color: #0f8cbd;
-    color: white;
-    position: fixed;
-    height: 100%;
-    right: -250px;
-    /* Initially position sidebar off-screen to the right */
-    transition: right 0.3s;
-    z-index: 1;
-    overflow-x: scroll;
-    margin-top: -14%;
-}
-
-/* Sidebar list items */
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 3vh;
-}
-
-.sidebar ul li {
-    padding: 15px;
-    text-align: center;
-    /* height: 1rem; */
-    position: relative;
-    /* For positioning the dropdown */
-}
-
-/* Sidebar links styling */
-.sidebar ul li a {
-    color: white;
+a{
     text-decoration: none;
-    display: block;
+    color: inherit;
 }
 
-/* Hover effect for sidebar links */
-.sidebar ul li a:hover {
-    color: white;
-}
 
 /* Product List dropdown - initially hidden */
-#product-dropdown {
-    display: none;
-    background-color: #0f8cbd;
-    padding: 10px;
-    position: absolute;
-    list-style: none;
-    width: 100%;
-    top: 0.8rem;
-    /* Adjust position to ensure itâ€™s below the parent */
-    box-sizing: border-box;
-    left: 0;
-    z-index: 999;
-    /* Make sure itâ€™s on top of other elements */
-}
-
-/* Display dropdown when hovering over "Product List" or the dropdown itself */
-#product-list:hover>#product-dropdown,
-#product-dropdown:hover {
-    display: block;
-}
-
-/* Dropdown list item styling */
-#product-dropdown li {
-    margin: 10px 0;
-}
-
-/* Links inside the dropdown */
-#product-dropdown a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Hover effect inside the dropdown */
-#product-dropdown a:hover {
-    background-color: #0f8cbd;
-}
 
 /* Content area */
 #content {
@@ -173,29 +82,6 @@ body {
     font-style: normal;
 }
 
-.navbar {
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    align-items: center;
-}
-
-.left {
-    display: flex;
-    width: 50%;
-    align-items: center;
-    height: 100%;
-}
-
-#logo {
-    height: 100px;
-    width: 100px;
-    border: 1px solid black;
-    filter: drop-shadow(1px 1px 20px rgb(253, 255, 255));
-    border: none;
-    margin: 0 10px;
-    animation: logoAnime 1s 0.15s 1;
-}
 
 @keyframes logoAnime {
     0% {
@@ -209,17 +95,6 @@ body {
     }
 }
 
-#title {
-    font-size: 2.5rem;
-    opacity: 0;
-    margin: 0 10px;
-    font-family: Bahnschrift SemiCondensed;
-    font-weight: bold;
-    background: linear-gradient(to bottom, rgba(5, 165, 229, 255), rgba(52, 50, 112, 255));
-    background-clip: text;
-    color: transparent;
-    animation: titleAnime 1s 1.15s 1 forwards;
-}
 
 @keyframes titleAnime {
     0% {
@@ -233,13 +108,72 @@ body {
     }
 }
 
+p{
+    margin-left: 27%;
+    margin-top: 30px;;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0 5%; */
+    background-color:#fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+   
+}
+
+/* Left Section */
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+    
+}
 .head {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 10px;
+    
+}
+#logo {
+    height: 90%;
+    width: 90%;
+    max-width: 90px;
+    filter: drop-shadow(1px 1px 20px rgb(253, 255, 255));
+    margin-right: 15px;
+    border: none;
+    margin: 0 10px;
 }
 
+#title {
+    font-size: 2.5rem;
+    margin: 0 10px;
+    font-family: 'Bahnschrift SemiCondensed';
+    font-weight: bold;
+    background: linear-gradient(to bottom, rgba(5, 165, 229, 255), rgba(52, 50, 112, 255));
+    background-clip: text;
+    color: transparent;
+}
+
+/* Right Section */
 .right {
     width: 50%;
     height: 100%;
@@ -249,18 +183,66 @@ body {
 }
 
 #nav-tab {
+    margin-top: 60px;;
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: 20px;
+    font-size: 18px;
     font-weight: 600;
-    font-size: 20px;
     cursor: pointer;
-    transition: 0.5s all;
+     transition: 0.7s all;
+
 }
 
-#nav-tab li a{
-    text-decoration: none;
-    color: black;
+#nav-tab li {
+    position: relative;
+    padding: 10px 15px;
+    
+    transition: color 0.3s ease-in-out;
+}
+li:hover {
+    border-bottom: 1.5px solid black;
+}
+#nav-tab li:hover {
+    color: #0f8cbd;
+    
+}
+
+/* Dropdown */
+.product-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    padding: 10px 5px;
+    list-style: none;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.product-dropdown li {
+
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease-in-out;
+}
+
+.product-dropdown li:hover {
+    /* background: rgba(15, 140, 189, 0.1); */
+    opacity: 100% ;
+}
+
+/* Show dropdown on hover */
+#product:hover .product-dropdown {
+    opacity: 90%;
+    visibility: visible;
+    transform: translateY(0px);
 }
 
 .left-anime {
@@ -297,9 +279,7 @@ body {
     }
 }
 
-li:hover {
-    border-bottom: 1.5px solid black;
-}
+
 
 .product-section {
     display: none;
@@ -1074,13 +1054,6 @@ li:hover {
 
 
 
-body {
-    /* background: linear-gradient(135deg, #4c7aa9 23%, #69d9e3 40%); */
-
-    min-height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-}
 
 /* Product Section */
 .product-container {
