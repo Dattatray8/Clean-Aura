@@ -22,7 +22,7 @@ document.addEventListener('click', function (event) {
 //toggle product section
 function visibleProductSection() {
   const product_sec = document.querySelector(".product-section");
-  product_sec.style.display = "block";
+  product_sec.style.display = 'flex';
 }
 
 function hideProductSection() {
@@ -50,37 +50,37 @@ product.addEventListener("click", visibilitymode);
 
 //in card section img slider
 
-const p_images = ['./images/GreenApple5ltr.webp', './images/Lavender5ltr.webp', './images/Lemon5ltr.webp', './images/Peach5ltr.webp', './images/Rose5ltr.webp']
-const p_name = ['Green Apple', 'Lavender', 'Lemon', 'Peach', 'Rose']
-let img_index = 0;
-let name_index = 0;
+// const p_images = ['./images/GreenApple5ltr.webp', './images/Lavender5ltr.webp', './images/Lemon5ltr.webp', './images/Peach5ltr.webp', './images/Rose5ltr.webp']
+// const p_name = ['Green Apple', 'Lavender', 'Lemon', 'Peach', 'Rose']
+// let img_index = 0;
+// let name_index = 0;
 
-function next() {
-  img_index = (img_index + 1) % p_images.length;
-  name_index = (name_index + 1) % p_name.length;
-  updateImage();
-}
+// function next() {
+//   img_index = (img_index + 1) % p_images.length;
+//   name_index = (name_index + 1) % p_name.length;
+//   updateImage();
+// }
 
-function updateImage() {
-  document.getElementById("pimg").src = p_images[img_index];
-  document.getElementById("pname").innerHTML = p_name[name_index];
-}
+// function updateImage() {
+//   document.getElementById("pimg").src = p_images[img_index];
+//   document.getElementById("pname").innerHTML = p_name[name_index];
+// }
 
-setInterval(next, 3000);
+// setInterval(next, 3000);
 
 //know more feature
 
-function knowMore(){
-  const pCard = document.querySelector('.know-more');
-  pCard.style.display = 'block';
-}
+// function knowMore() {
+//   const pCard = document.querySelector('.know-more');
+//   pCard.style.display = 'block';
+// }
 
-function hideKnowMore(){
-  const pCard = document.querySelector('.know-more');
-  pCard.style.display = 'none';
-}
+// function hideKnowMore() {
+//   const pCard = document.querySelector('.know-more');
+//   pCard.style.display = 'none';
+// }
 
-document.querySelector('.know-more').addEventListener('mouseleave',hideKnowMore);
+// document.querySelector('.know-more').addEventListener('mouseleave', hideKnowMore);
 
 
 // -------------glass claener?
@@ -134,3 +134,38 @@ function closeModal() {
 
 // Start the image change functionality when the page loads
 changeProduct();
+
+
+// sidebar
+const toggleBtn = document.querySelector('.toggle-sidebar');
+const closeBtn = document.querySelector('.close-sidebar');
+const sidebar = document.getElementById('sidebar');
+
+toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+});
+
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+});
+
+// Set active menu item
+const menuItems = document.querySelectorAll('.sidebar-menu a');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', function() {
+        // Remove active class from all items
+        menuItems.forEach(i => i.classList.remove('active'));
+        
+        // Add active class to clicked item
+        this.classList.add('active');
+    });
+});
+
+// Close sidebar when clicking outside on mobile
+document.addEventListener('click', (e) => {
+    
+        if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
+            sidebar.classList.remove('open');
+        }
+});

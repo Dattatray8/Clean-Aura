@@ -150,8 +150,6 @@
       color: white;
     }
 
-
-
     /* Responsive Styles */
     @media (max-width: 768px) {
       .home-h1 {
@@ -172,7 +170,6 @@
         width: auto;
       }
 
-
       /* grid-template-columns: 1fr 1fr; */
       .product-list {
         display: grid;
@@ -182,15 +179,7 @@
         justify-items: center;
       }
 
-
-
-
-
     }
-
-
-
-
 
     @media (max-width: 469px) {
       .home-h1 {
@@ -221,7 +210,6 @@
 
       }
 
-
     }
 
 
@@ -233,7 +221,6 @@
 
       }
 
-
       .product-item {
         height: 300px;
 
@@ -242,14 +229,7 @@
 
     }
 
-
-
-
-
-
-
     /* Basic reset */
-
 
     /* Gaurav Slider */
     .gaurav-slider {
@@ -366,7 +346,8 @@
       <!-- <br> -->
       <div class="head">
         <p id="title">Clean Aura</p>
-        <p style="margin:0 0 0 10px;"> <span style="color: #194271; font-weight: 600;">Clear Aura:</span> Clean Solutions for Every Surface, Inside and Out</p>
+        <p style="margin:0 0 0 10px;"> <span style="color: #194271; font-weight: 600;">Clear Aura:</span> Clean
+          Solutions for Every Surface, Inside and Out</p>
       </div>
     </div>
 
@@ -375,26 +356,89 @@
         <li class="left-anime"><a href="/">Home</a></li>
         <li class="left-anime"><a href="/contact.html">Contact</a></li>
         <li class="right-anime">About</li>
-        <li id="product" class="right-anime" onclick="visibleProductSection()">Products</li>
+        <li id="product" class="right-anime" onclick="visibleProductSection ()">Products</li>
       </ul>
     </div>
-
-    <div class="product-section">
-      <ul id="product-tab">
-        <li style="margin-bottom: 20px;"><a href="hand-wash.html">HandWash</a></li>
-        <li style="margin-bottom: 20px;">Glass Cleaner</li>
-        <li style="margin-bottom: 20px;">Colour Floor Liquid</li>
-        <li style="margin-bottom: 20px;">Premium Surface Cleaner</li>
-        <li style="margin-bottom: 20px;">MultiPurpose Cleaning Liquid</li>
-        <li style="margin-bottom: 20px;">Toilet Cleaner</li>
-        <li style="margin-bottom: 20px;">DishWash</li>
-        <li style="margin-bottom: 20px;">Fabric Liquid Detergent</li>
-        <li style="margin-bottom: 20px;">Room Fresher</li>
-        <li style="margin-bottom: 20px;">Car Wash Shampoo</li>
-      </ul>
+    <button class="toggle-sidebar" aria-label="Toggle Sidebar">☰</button>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Clean Aura</h2>
+            <button class="close-sidebar" aria-label="Close Sidebar">✕</button>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
   </nav>
 
+  <div class="product-section">
+    <div class="product_icon leftAnime">
+      <a href="glassCleaner.html">
+        <img src="/images/GlassCleaner500ml.webp" class="product_image" alt="">
+        <p>Glass Cleaner</p>
+      </a>
+    </div>
+    <div class="product_icon leftAnime">
+      <a href="hand-wash.html">
+        <img src="/images//Lemon500ml.webp" class="product_image" alt="">
+        <p>HandWash</p>
+      </a>
+    </div>
+    <div class="product_icon leftAnime">
+      <a href="color-floor-liquid.html">
+        <img src="/images/Tango1ltr.webp" class="product_image" alt="">
+        <p>Color Floor Liquid</p>
+      </a>
+    </div>
+    <div class="product_icon leftAnime">
+      <a href="premium-surface-cleaner.html">
+        <img src="/images/GreenApple500ml.webp" class="product_image" alt="">
+        <p>Premium Surface Cleaner</p>
+      </a>
+    </div>
+    <div class="product_icon leftAnime">
+      <a href="multipurposeLiquid.html">
+        <img src="/images/MultiPurpose1ltr.webp" class="product_image" alt="">
+        <p>MultiPurpose Cleaning Liquid</p>
+      </a>
+    </div>
+    <div class="product_icon rightAnime">
+      <a href="ToiletCleaner.html">
+        <img src="/images/T500ml.webp" class="product_image" alt="">
+        <p>Toilet Cleaner</p>
+      </a>
+    </div>
+    <div class="product_icon rightAnime">
+      <a href="dishwash.html">
+        <img src="/images/DishWash250ml.webp" class="product_image" alt="">
+        <p>DishWash</p>
+      </a>
+    </div>
+    <div class="product_icon rightAnime">
+      <a href="fabricdetergent.html">
+        <img src="/images/LqidDetergent1ltr.webp" class="product_image" alt="">
+        <p>Fabric Liquid Detergent</p>
+      </a>
+    </div>
+    <div class="product_icon rightAnime">
+      <a href="room fresher.html">
+        <img src="/images/RoomFreshnerGreenApple5ltr.webp" class="product_image" alt="">
+        <p>Room Freshers</p>
+      </a>
+    </div>
+    <div class="product_icon rightAnime">
+      <a href="carwash.html">
+        <img src="/images/CarWashShampoo5ltr.webp" class="product_image" alt="">
+        <p>Car Wash Shampoo</p>
+      </a>
+    </div>
+  </div>
 
   <!-- Content area -->
 
