@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="Style.css">
   <link rel="shortcut icon" href="clean_img.jpg" type="image/x-icon">
   <!-- Include CDN for CD Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdicons@2.0.0/dist/cdicons.min.css">
 
 
@@ -356,24 +357,18 @@
         <li class="left-anime"><a href="/">Home</a></li>
         <li class="left-anime"><a href="/contact.html">Contact</a></li>
         <li class="right-anime">About</li>
-        <li id="product" class="right-anime" onclick="visibleProductSection ()">Products</li>
+        <li id="product" class="right-anime" onclick="visibleProductSection()">Products</li>
       </ul>
     </div>
-    <button class="toggle-sidebar" aria-label="Toggle Sidebar">☰</button>
-    
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>Clean Aura</h2>
-            <button class="close-sidebar" aria-label="Close Sidebar">✕</button>
-        </div>
-        <div class="sidebar-content">
-            <ul class="sidebar-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
+    <i class="fas fa-bars menu-btn" onclick="openMenu()" style="display: none;"></i>
+
+    <!-- Sidebar -->
+    <div id="navMenu" class="side-menu">
+      <i class="fas fa-times close-menu-btn" onclick="closeMenu()"></i>
+      <a href="/" class="menu-link"><i class="fas fa-home"></i> Home</a>
+      <a href="" class="menu-link"><i class="fas fa-user"></i> About</a>
+      <a href="/contact.html" class="menu-link"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="" class="menu-link" onclick="visibleProductSection()"><i class="fas fa-box"></i> Products</a>
     </div>
   </nav>
 

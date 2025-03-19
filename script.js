@@ -68,21 +68,6 @@ product.addEventListener("click", visibilitymode);
 
 // setInterval(next, 3000);
 
-//know more feature
-
-// function knowMore() {
-//   const pCard = document.querySelector('.know-more');
-//   pCard.style.display = 'block';
-// }
-
-// function hideKnowMore() {
-//   const pCard = document.querySelector('.know-more');
-//   pCard.style.display = 'none';
-// }
-
-// document.querySelector('.know-more').addEventListener('mouseleave', hideKnowMore);
-
-
 // -------------glass claener?
 
 
@@ -135,37 +120,12 @@ function closeModal() {
 // Start the image change functionality when the page loads
 changeProduct();
 
+//sidebar
 
-// sidebar
-const toggleBtn = document.querySelector('.toggle-sidebar');
-const closeBtn = document.querySelector('.close-sidebar');
-const sidebar = document.getElementById('sidebar');
+function openMenu() {
+  document.getElementById("navMenu").style.right = "0";
+}
 
-toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
-});
-
-closeBtn.addEventListener('click', () => {
-    sidebar.classList.remove('open');
-});
-
-// Set active menu item
-const menuItems = document.querySelectorAll('.sidebar-menu a');
-
-menuItems.forEach(item => {
-    item.addEventListener('click', function() {
-        // Remove active class from all items
-        menuItems.forEach(i => i.classList.remove('active'));
-        
-        // Add active class to clicked item
-        this.classList.add('active');
-    });
-});
-
-// Close sidebar when clicking outside on mobile
-document.addEventListener('click', (e) => {
-    
-        if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
-            sidebar.classList.remove('open');
-        }
-});
+function closeMenu() {
+  document.getElementById("navMenu").style.right = "-250px";
+}
