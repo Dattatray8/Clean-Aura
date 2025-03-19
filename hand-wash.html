@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="Style.css">
     <title>Clean Aura HandWash</title>
 </head>
@@ -27,6 +29,16 @@
                 <li class="right-anime">About</li>
                 <li id="product" class="right-anime" onclick="visibleProductSection()">Products</li>
             </ul>
+        </div>
+        <i class="fas fa-bars menu-btn" onclick="openMenu()" style="display: none";></i>
+
+        <!-- Sidebar -->
+        <div id="navMenu" class="side-menu">
+            <i class="fas fa-times close-menu-btn" onclick="closeMenu()"></i>
+            <a href="/" class="menu-link"><i class="fas fa-home"></i> Home</a>
+            <a href="" class="menu-link"><i class="fas fa-user"></i> About</a>
+            <a href="/contact.html" class="menu-link"><i class="fas fa-envelope"></i> Contact</a>
+            <p class="menu-link" onclick="visibleProductSection()" id="product"><i class="fas fa-box"></i> Products</p>
         </div>
     </nav>
 
@@ -92,9 +104,10 @@
             </a>
         </div>
     </div>
+    <h1 class="Page-title-card product-title-anime"> Hand Wash</h1>
 
     <center>
-        <section class="hand-wash-container infoAnime">
+        <section class="hand-wash-container infoAnime" style="margin-top: 5vw;">
             <h1> Hand Wash</h1>
             <p class="product-message">"Aqua containing extra of Blossom and coconut milk, Lauri Acid ,
                 Concomonoethanolamide , Potassium Hydroxide , Ethylene Glycol Mono Stearate, Cocamidopropylbetaine,
@@ -106,7 +119,6 @@
         </section>
     </center>
     <br>
-    <h1 class="Page-title-card product-title-anime"> Hand Wash</h1>
     <div class="pricing-section product-title-anime">
         <h2>Buy Any Hand Wash – Same Price for All Flavors!</h2>
         <div class="pricing-table">
@@ -123,8 +135,8 @@
                 <span>₹363</span>
             </div>
         </div>
-    </div>  
-    
+    </div>
+
     <main>
         <section>
             <div class="cards">
@@ -145,11 +157,13 @@
                     </div>
                 </div>
                 <div class="p-card leftCardAnime" style="box-shadow: 2px 2px 10px #ffe4e1;">
-                        <div style="text-align: center;width: 100%;" class="imageContainer">
-                            <img src="./images/Rose1ltr.webp" alt="product-image" style="z-index: 3;margin-right: 15%;position: absolute;">
-                            <img src="./images/Rose5ltr.webp" alt="product-image" style="z-index: 2;position: absolute;margin-left: 15%;margin-bottom: 2px;">
-                            <p style="font-weight: bold;margin-top: 280px;" id="pname">Rose</p>
-                        </div>
+                    <div style="text-align: center;width: 100%;" class="imageContainer">
+                        <img src="./images/Rose1ltr.webp" alt="product-image"
+                            style="z-index: 3;margin-right: 15%;position: absolute;">
+                        <img src="./images/Rose5ltr.webp" alt="product-image"
+                            style="z-index: 2;position: absolute;margin-left: 15%;margin-bottom: 2px;">
+                        <p style="font-weight: bold;margin-top: 280px;" id="pname">Rose</p>
+                    </div>
                 </div>
                 <div class="p-card rightCardAnime" style="box-shadow: 2px 2px 10px #fffacd;">
                     <div style="text-align: center;width: 100%;" class="imageContainer">

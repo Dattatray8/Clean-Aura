@@ -218,6 +218,53 @@ body {
     animation: titleAnime 1s 1.15s 1 forwards;
 }
 
+.slogan {
+    display: none;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+@media (max-width: 668px){
+    .left {
+        width: 75%;
+    }
+    #title{
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 560px){
+    .head {
+        width: 75%;
+    }
+}
+
+@media (max-width: 499px){
+    #slogan{
+        display: none;   
+    }
+    .slogan {
+        display: flex;
+        color: black;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        z-index: 10;
+        font-size: 50px;
+        width: 100%;
+    }
+    .slogan > p {
+        color: black;
+        font-size: 20px;
+    }
+}
+
 @keyframes titleAnime {
     0% {
         opacity: 0;
@@ -230,12 +277,7 @@ body {
     }
 }
 
-.head {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 10px;
-}
+
 
 .right {
     width: 50%;
@@ -439,7 +481,7 @@ body {
     font-size: 24px;
     cursor: pointer;
     position: fixed;
-    top: 20px;
+    top: 50px;
     right: 20px;
     color: #1a1a1a;
     z-index: 999;
@@ -531,7 +573,31 @@ li:hover {
 }
 
 .product_image {
-    height: 10vh;
+    height: 20vh;
+}
+
+@media (max-width: 1440px){
+    .product_icon{
+        width: 25vw;
+        height: 25vw;
+        margin: 10px;
+    }
+    .product-image{
+        height: 5vh;
+    }
+}
+
+@media (max-width: 500px){
+    .product-section{
+        margin-top: 5vw;
+    }
+    .product_icon{
+        width: 40vw;
+        height: 40vw;
+    }
+    .product_icon p{
+        font-size: 10px;
+    }
 }
 
 .hand-wash-container {
@@ -674,6 +740,12 @@ li:hover {
     .p-card {
         width: 90%;
     }
+    /* #pimg3 {
+        border: 2px solid black;
+        right: -300px;
+        margin-top: 22px;
+        z-index: 3;
+    } */
 }
 
 .p-card img {
@@ -713,6 +785,17 @@ li:hover {
     z-index: 3;
 }
 
+@media (max-width: 768px){
+    .p-card img{
+        height: 45vw;
+    }
+    #pimg1{
+        left: 10.25%;
+    }
+    #pimg3{
+        right: 10%;
+    }
+}
 
 .p-card input {
     border: none;
