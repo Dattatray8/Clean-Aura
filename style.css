@@ -20,154 +20,83 @@ body {
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-    /* border: 2px solid black; */
-    /* background-color: #00f2fe; */
-    /* background-image: url('image1.png');
-  z-index: -1; */
-    /* ascasc */
-    /* background-color: red; */
-    /* z-index: -1; */
 }
 
-/* .wrapper {
+.kslider {
+    width: 90vw; 
+    height: 60vh;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     display: flex;
-    position: relative;
+    align-items: center;
+    background: rgb(255, 255, 255);
+  }
+  .kslider:hover{
+    cursor: pointer;
+  }
   
-} */
-
-/* Logo positioning */
-.logo img {
-    position: absolute;
-    top: 20px;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    left: 40px;
-    z-index: 1000;
-}
-
-/* Sidebar styling */
-.sidebar {
-    width: 250px;
-    background-color: #0f8cbd;
-    color: white;
-    position: fixed;
+  /* Slider track */
+  .slider {
+    display: flex;
+    width: 400%; 
     height: 100%;
-    right: -250px;
-    /* Initially position sidebar off-screen to the right */
-    transition: right 0.3s;
-    z-index: 1;
-    overflow-x: scroll;
-    margin-top: -14%;
-}
-
-/* Sidebar list items */
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 3vh;
-}
-
-.sidebar ul li {
-    padding: 15px;
-    text-align: center;
-    /* height: 1rem; */
-    position: relative;
-    /* For positioning the dropdown */
-}
-
-/* Sidebar links styling */
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-}
-
-/* Hover effect for sidebar links */
-.sidebar ul li a:hover {
-    color: white;
-}
-
-/* Product List dropdown - initially hidden */
-#product-dropdown {
-    display: none;
-    background-color: #0f8cbd;
-    padding: 10px;
-    position: absolute;
-    list-style: none;
-    width: 100%;
-    top: 0.8rem;
-    /* Adjust position to ensure itâ€™s below the parent */
-    box-sizing: border-box;
-    left: 0;
-    z-index: 999;
-    /* Make sure itâ€™s on top of other elements */
-}
-
-/* Display dropdown when hovering over "Product List" or the dropdown itself */
-#product-list:hover>#product-dropdown,
-#product-dropdown:hover {
-    display: block;
-}
-
-/* Dropdown list item styling */
-#product-dropdown li {
-    margin: 10px 0;
-}
-
-/* Links inside the dropdown */
-#product-dropdown a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Hover effect inside the dropdown */
-#product-dropdown a:hover {
-    background-color: #0f8cbd;
-}
-
-/* Content area */
-#content {
-    margin-right: 0;
-    padding: 20px;
-    transition: margin-right 0.3s;
-    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    
+  }
+  
+  /* Individual slides */
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
-    position: absolute;
-    margin-left: 35%;
-    z-index: -1;
-    /* overflow-x: hidden; */
-}
-
-/* Main heading */
-#content #main-heading {
-    font-size: 40px;
-    font-weight: bold;
-    z-index: -1;
-    letter-spacing: 12px;
-    text-transform: uppercase;
-    text-align: center;
-    background: linear-gradient(45deg, #9df3f4 80%, #57799d 105%);
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    /* border: 2px solid black; */
-    /* margin-left: -60px; */
-    /* margin-right: 1300px; */
-    /* width: auto; */
-    /* justify-content: center;
-    text-align: center; */
-    padding: 10px;
-    opacity: 0;
-    /* Initially hidden */
-    transform: translateY(20px);
-    /* Initially moved down */
-    animation: fadeInUp 1s ease-out forwards;
-    /* Add the animation */
-    font-family: "PT Serif", serif;
-    /* font-weight: 400; */
-    font-style: normal;
+    align-items: center;
+    overflow: hidden; 
+    
+  }
+  
+  /* Image styling */
+  .slide img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    border-radius: 15px;
+  }
+  
+  
+  /* slider-Navigation */
+  .slider-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  
+  /* Navigation Bars */
+  .nav-bar {
+    width: 40px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 0 10px 2px rgba(107, 106, 106, 0.8);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+  }
+  
+  /* Active Slide Indicator */
+  .nav-bar.active {
+    background: linear-gradient(45deg, #41aaff, #ff4b2b);
+    box-shadow: 0 10px 10px rgba(57, 57, 57, 0.8);
+    transform: scale(1.2);
+  }
+  
+  @media (max-width: 900px) {
+    .kslider {
+        height: 30vh; /* 65% of viewport height */
+      }
 }
 
 .navbar {
@@ -450,7 +379,7 @@ body {
     position: fixed;
     top: 0;
     right: -250px;
-    background-color: #1a1a1a;
+    background-color: #0d6efd;
     padding-top: 20px;
     transition: 0.4s ease;
     z-index: 1000;
@@ -896,12 +825,12 @@ li:hover {
 
 /* --------------------------------------------card-section-heading */
 
-
+/* 
 .card-section {
 
     width: 90%;
     height: 200px;
-    /* border: 2px solid black; */
+    /* border: 2px solid black; 
     background-color: #BBDEFB;
     justify-content: center;
     text-align: center;
@@ -925,7 +854,7 @@ h1 {
     gap: 20px;
 }
 
-/* Boxed Gallery */
+/* Boxed Gallery 
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 0.5fr));
@@ -948,7 +877,7 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* Ensures images fit inside the box */
+    /* Ensures images fit inside the box 
     transition: transform 0.3s ease-in-out;
     background: #eae7ea;
 }
@@ -958,7 +887,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Achievements Section */
+/* Achievements Section 
 .achievements {
     flex: 2px;
     padding: 15px;
@@ -1007,7 +936,7 @@ h1 {
     transform: rotate(10deg);
 }
 
-/* Animations */
+/* Animations 
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1032,7 +961,7 @@ h1 {
     }
 }
 
-/* Responsive Design */
+/* Responsive Design 
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -1046,7 +975,7 @@ h1 {
     .achievement-item {
         width: 90%;
     }
-}
+} */
 
 
 
@@ -1062,7 +991,7 @@ h1 {
 
 /* --------------------------footer css----------------------- */
 /* Footer Container */
-.cfooter {
+/* .cfooter {
     position: relative;
     bottom: 0;
     width: 100vw;
@@ -1077,10 +1006,10 @@ h1 {
     transition: height 0.3s ease;
     column-count: 3;
     margin-top: 20px;
-    /* Reduced space between gallery and footer */
+    /* Reduced space between gallery and footer 
 }
 
-/* Logo Styles */
+/* Logo Styles 
 .footer_logo {
     width: 80px;
     height: 80px;
@@ -1094,7 +1023,7 @@ h1 {
     transform: scale(1.1);
 }
 
-/* Footer Content Layout */
+/* Footer Content Layout 
 .footer_content {
     display: flex;
     justify-content: space-around;
@@ -1119,7 +1048,7 @@ h1 {
 }
 
 
-/* Social Icons */
+/* Social Icons 
 .footer_icons {
     display: flex;
     gap: 15px;
@@ -1144,7 +1073,7 @@ h1 {
     margin: 15px 0;
 }
 
-/* Designed & Developed By */
+/* Designed & Developed By 
 .footer_design_by,
 .footer_infyvaritaas {
     font-size: 1rem;
@@ -1165,7 +1094,7 @@ h1 {
         padding: 2rem;
 
     }
-}
+} */
 
 /* Responsive Styling */
 /* @media(max-width: 1200px) {
@@ -1177,16 +1106,16 @@ text-align: center;
 font-size: 1.8rem;
 }
 
-} */
+} 
 
 
 @media(max-width: 1950px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 2rem;
-        /* border: 12px solid rgb(221, 7, 7); */
+        /* border: 12px solid rgb(221, 7, 7); 
     }
 }
 
@@ -1194,7 +1123,7 @@ font-size: 1.8rem;
 @media(max-width: 1901px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 2rem;
     }
@@ -1209,12 +1138,12 @@ margin-top: 10vh;
 }
 } */
 
-@media(max-width: 769px) {
+/* @media(max-width: 769px) {
     .cfooter {
         height: auto;
         margin-top: 3rem;
         /* bottom: -220px; */
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
     }
 
@@ -1250,7 +1179,7 @@ margin-top: 10vh;
 @media(max-width: 660px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 3rem;
     }
@@ -1277,7 +1206,7 @@ margin-top: 10vh;
 @media(max-width: 450px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 3rem;
     }
@@ -1287,13 +1216,13 @@ margin-top: 10vh;
 @media(max-width: 376px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 3rem;
     }
 }
 
-
+ */
 
 
 
@@ -1391,246 +1320,6 @@ margin-top: 10vh;
 
 
 
-@media screen and (max-width:939px) {
-
-    #content {
-
-        /* margin-right: 0; */
-        padding: 20px;
-        /* border: 2px solid black; */
-        transition: margin-right 0.3s;
-        text-align: center;
-        justify-content: center;
-        position: absolute;
-        margin-left: 0%;
-        top: 240px;
-        z-index: -1;
-        width: 100%;
-        /* border: 2px solid black; */
-
-
-    }
-
-
-
-    .home-section {
-
-        margin-top: 4vh;
-    }
-
-
-
-    .logo {
-        position: absolute;
-        top: 35px;
-        left: 40vw;
-        z-index: -1;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .logo img {
-        height: 120px;
-        /* Adjust logo size as needed */
-        border-radius: 50%;
-        width: 120px;
-    }
-
-    .gaurav-slider {
-        width: 100%;
-        /* border: 2px solid black; */
-        height: 60vh;
-        margin-top: 66vh;
-        position: relative;
-        overflow: hidden;
-    }
-
-}
-
-
-
-
-
-
-@media screen and (max-width:685px) {
-    .logo img {
-        margin-left: -5vw;
-    }
-
-}
-
-@media screen and (max-width:739px) {
-
-    .home-section {
-
-        margin-top: 4vh;
-    }
-
-    #content #main-heading {
-
-        font-size: 2.5rem;
-        z-index: 1;
-    }
-
-    #content>q {
-        font-size: 0.6rem;
-    }
-
-    .gaurav-slider {
-        width: 100%;
-        /* border: 2px solid black; */
-        height: 60vh;
-        margin-top: 70vh;
-        position: relative;
-        overflow: hidden;
-    }
-}
-
-
-
-
-@media screen and (max-width:548px) {
-
-    .home-section {
-
-        margin-top: 4vh;
-    }
-
-    .logo {
-        position: absolute;
-        top: 15vh;
-        left: 38vw;
-        z-index: -1;
-        justify-content: center;
-        text-align: center;
-    }
-
-
-
-    .logo img {
-        height: 100px;
-        width: 100px;
-        margin-left: -6vw;
-
-        border-radius: 50%;
-    }
-
-    #content {
-        width: 100%;
-        margin-left: 0%;
-    }
-
-}
-
-@media screen and (max-width:415px) {
-
-
-
-
-    .logo img {
-        height: 100px;
-        width: 100px;
-        margin-left: -15vw;
-
-        border-radius: 50%;
-    }
-
-
-
-}
-
-
-.card-section {
-
-    justify-content: center;
-    text-align: center;
-    /* margin-top: 16rem; */
-
-}
-
-@media screen and (max-width:548px) {
-
-    #content #main-heading {
-
-        font-size: 2rem;
-        z-index: 1;
-    }
-
-    #content>q {
-        font-size: 0.3rem;
-    }
-
-    .card-section {
-
-        margin-top: 25rem;
-        font-size: x-small;
-        height: 14rem;
-        /* border: 2px solid black; */
-
-    }
-
-    .card-section .product-headers {
-
-        font-size: 1.3rem;
-    }
-
-    .card-section .product-massage {
-
-        font-size: 0.9rem;
-    }
-
-    #content q {
-
-        font-size: 8px;
-    }
-
-
-
-}
-
-@media screen and (max-width:476px) {
-
-    #content {
-        width: 100%;
-        margin-left: 0%;
-    }
-
-    #content #main-heading {
-
-        font-size: 1.5rem;
-    }
-
-    .home-section {
-
-        margin-top: 0vh;
-    }
-
-
-
-    center .card-section {
-
-        height: 400px;
-        padding: 15px;
-
-    }
-
-    /* .product-header h2 {
-    color: cadetblue;
- } */
-
-    center .card-section .product-headers {
-
-        font-size: 1.4rem;
-
-
-    }
-
-    center .card-section .product-massage {
-        font-size: 14px;
-        /* padding: 0px 5px 5px; */
-    }
-
-}
 
 
 
@@ -1649,7 +1338,7 @@ margin-top: 10vh;
 
 /* --------------------------footer css----------------------- */
 /* Footer Container */
-.cfooter {
+/* .cfooter {
     position: relative;
     bottom: 0;
     width: 100vw;
@@ -1665,7 +1354,6 @@ margin-top: 10vh;
 
 }
 
-/* Logo Styles */
 .footer_logo {
     width: 80px;
     height: 80px;
@@ -1678,7 +1366,6 @@ margin-top: 10vh;
     transform: scale(1.1);
 }
 
-/* Footer Content Layout */
 .footer_content {
     display: flex;
     justify-content: space-around;
@@ -1699,7 +1386,6 @@ margin-top: 10vh;
     margin: 0;
 }
 
-/* Social Icons */
 .footer_icons {
     display: flex;
     gap: 15px;
@@ -1723,7 +1409,6 @@ margin-top: 10vh;
     margin: 15px 0;
 }
 
-/* Designed & Developed By */
 .footer_design_by,
 .footer_infyvaritaas {
     font-size: 1rem;
@@ -1741,24 +1426,23 @@ margin-top: 10vh;
         font-size: 1.8rem;
     }
        
-  } */
+  } 
 
 
-@media(max-width: 1950px) {
+/* @media(max-width: 1950px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
         bottom: 0px;
         margin-top: 30vh;
-        /* border: 12px solid rgb(221, 7, 7); */
+        /* border: 12px solid rgb(221, 7, 7); 
     }
-}
+} 
 
 
 @media(max-width: 1901px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 50vh;
     }
@@ -1771,14 +1455,14 @@ margin-top: 10vh;
         bottom: 0px;
         margin-top: 10vh;
     }
-} */
+} 
 
 @media(max-width: 769px) {
     .cfooter {
         height: auto;
         margin-top: 130vh;
         /* bottom: -220px; */
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
     }
 
@@ -1813,7 +1497,7 @@ margin-top: 10vh;
 @media(max-width: 660px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 110vh;
     }
@@ -1840,7 +1524,7 @@ margin-top: 10vh;
 @media(max-width: 450px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 180vh;
     }
@@ -1850,12 +1534,12 @@ margin-top: 10vh;
 @media(max-width: 376px) {
     .cfooter {
         height: auto;
-        /* Allow for dynamic height based on content */
+        /* Allow for dynamic height based on content 
         bottom: 0px;
         margin-top: 180vh;
     }
 }
-
+ */
 
 
 

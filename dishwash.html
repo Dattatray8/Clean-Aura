@@ -3,10 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="footer.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="Style.css">
     <title>Clean Aura DishWash</title>
+    <style>
+        @media (max-width: 500px) {
+            .head #s {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +24,7 @@
             <!-- <br> -->
             <div class="head">
                 <p id="title">Clean Aura</p>
-                <p style="margin:0 0 0 10px;"> <span style="color: #194271; font-weight: 600;"></span>"Clean
+                <p style="margin:0 0 0 10px;" id="s"> <span style="color: #194271; font-weight: 600;"></span>"Clean
                     Solutions for Every Surface, Inside and Out"</p>
             </div>
         </div>
@@ -149,37 +157,46 @@
     </main>
 
 
-    <footer class="cfooter" style="margin-top: 2vw;">
+    <footer class="cfooter" style="bottom: 0;margin: 0;padding: 0;margin-bottom: 0;">
         <div class="footer_content">
 
-            <img class="footer_logo" src="clean_img.jpg" alt="Footer Logo">
+            <img class="footer_logo" src="logo.webp" alt="Footer Logo">
 
 
             <div>
-                <h5>Contact:</h5>
+                <h3><i class="fa-solid fa-phone"></i> Contact:</h3>
                 <p>9260199999, 9850053387</p>
+                <h3><i class="fa-solid fa-location-dot"></i> Address:</h3>
+                <p>Pebbles Urbania,Bavdhan,Pune - 21</p>
+                <h3><i class="fa-solid fa-envelope"></i> Email:</h3>
+                <p><a href="mailto:gaurav.nandedkar07@icloud.com"
+                        style="color: white;">gaurav.nandedkar07@icloud.com</a></p>
+                <p><a href="mailto:info@CleanAura.in" style="color: rgb(6, 6, 6);">info@CleanAura.in</a></p>
             </div>
-            <div>
-                <h5>Email:</h5>
-                <!-- <p><a href="mailto:gaurav.nandedkar07@icloud.com" style="color: white;">gaurav.nandedkar07@icloud.com</a></p> -->
-                <p><a href="mailto:info@CleanAura.in" style="color: white;">info@CleanAura.in</a></p>
-            </div>
-            <div>
-                <h5>Address:</h5>
-                <p>Pebbles Urbania, Bavdhan, Pune - 21</p>
+            <div class="about-company">
+                <h3>About the company</h3><br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Fusce euismod convallis velit,<br>eu
+                    auctor
+                    lacus vehicula sit amet.
+                    <br>We provide thye best services using eco-friendly solutions.
+                </p>
+                <br>
+                <div class="footer_icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <br><br><br>
+
+
             </div>
         </div>
-
-        <div class="footer_icons">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-instagram"></i>
         </div>
 
         <hr class="footer_line">
 
-        <!-- Designed & Developed By Section -->
+        Designed & Developed By Section
         <div class="footer_design_by">
             © Designed & Developed by:
         </div>
